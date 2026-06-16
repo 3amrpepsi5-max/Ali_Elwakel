@@ -1,0 +1,18 @@
+{
+  "name": "الوكيل للستائر",
+  "short_name": "الوكيل",
+  "description": "بيع وتفصيل وتركيب الستائر - القاهرة",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B0514",
+  "theme_color": "#D4AF37",
+  "dir": "rtl",
+  "lang": "ar",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect width='192' height='192' fill='%230B0514'/><text y='140' x='20' font-size='140'>🪟</text></svg>",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    }
+  ]
+}

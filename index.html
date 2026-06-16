@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="الوكيل للستائر - بيع وتفصيل وتركيب الستائر بالقاهرة. اتصل بنا: 01003402861" />
+  <meta name="theme-color" content="#1a0a2e" />
+  <title>الوكيل للستائر | بيع، تفصيل، وتركيب بالقاهرة</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪟</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --gold: #D4AF37;
+      --gold-light: #F3E5AB;
+      --gold-glow: rgba(212, 175, 55, 0.6);
+      --dark: #0B0514;
+      --dark-mid: #150A26;
+      --dark-card: #1F103A;
+      --cream: #FAF9F6;
+      --text-muted: #A89FBC;
+      --accent: #8E6BC2;
+      --fb-blue: #1877F2;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Cairo', sans-serif; background: var(--dark); color: var(--cream); direction: rtl; overflow-x: hidden; }
+
+    /* تأثيرات الإضاءة المتحركة */
+    @keyframes textGlow {
+      0% { text-shadow: 0 0 10px var(--gold-glow), 0 0 20px var(--gold-glow); }
+      100% { text-shadow: 0 0 20px var(--gold), 0 0 30px var(--gold-light); }
+    }
+    
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center;
+      background: rgba(11, 5, 20, 0.85); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(212,175,55,0.2);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    }
+    .nav-logo { font-size: 1.3rem; font-weight: 900; color: var(--gold); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+    .nav-logo span { color: var(--cream); font-weight: 400; font-size: 0.85rem; background: rgba(212,175,55,0.1); padding: 2px 8px; border-radius: 20px;}
+    .nav-cta {
+      background: var(--gold); color: var(--dark); border: none; padding: 0.5rem 1.2rem; border-radius: 50px;
+      font-weight: 700; font-size: 0.9rem; text-decoration: none; transition: all 0.3s ease;
+      box-shadow: 0 0 15px var(--gold-glow);
+    }
+    .nav-cta:hover { background: var(--gold-light); transform: scale(1.05); box-shadow: 0 0 25px var(--gold); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+      text-align: center; padding: 7rem 1.5rem 4rem; position: relative; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: radial-gradient(circle at 50% 30%, rgba(142, 107, 194, 0.15), transparent 60%),
+                  radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.1), transparent 50%), var(--dark);
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 750px; animation: float 6s ease-in-out infinite; }
+    .hero-badge {
+      display: inline-block; background: rgba(212,175,55,0.15); border: 1px solid var(--gold-glow); color: var(--gold-light);
+      padding: 0.4rem 1.2rem; border-radius: 50px; font-size: 0.9rem; font-weight: 700; margin-bottom: 1.5rem; box-shadow: 0 0 10px var(--gold-glow);
+    }
+    .hero h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 900; line-height: 1.2; margin-bottom: 0.5rem; color: var(--cream); }
+    .hero h1 em { font-style: normal; color: var(--gold); display: block; animation: textGlow 2s infinite alternate; }
+    .hero-sub { font-size: clamp(1rem, 3vw, 1.25rem); color: var(--text-muted); margin: 1.5rem 0 2.5rem; line-height: 1.8; }
+    
+    .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold), #B8960C); color: var(--dark);
+      padding: 1rem 2.2rem; border-radius: 50px; font-weight: 800; font-size: 1.1rem;
+      text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;
+      transition: all 0.3s; box-shadow: 0 5px 25px var(--gold-glow);
+    }
+    .btn-primary:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 8px 35px var(--gold); }
+    .btn-secondary {
+      background: rgba(255,255,255,0.05); color: var(--cream); border: 1px solid rgba(255,255,255,0.2);
+      padding: 1rem 2.2rem; border-radius: 50px; font-weight: 600; font-size: 1.1rem;
+      text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.3s; backdrop-filter: blur(5px);
+    }
+    .btn-secondary:hover { border-color: var(--gold); background: rgba(212,175,55,0.1); box-shadow: 0 0 15px var(--gold-glow); }
+
+    .hero-stats { display: flex; justify-content: center; gap: 3rem; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); flex-wrap: wrap; }
+    .stat-num { font-size: 2rem; font-weight: 900; color: var(--gold); display: block; text-shadow: 0 0 10px var(--gold-glow); }
+    .stat-label { font-size: 0.9rem; color: var(--text-muted); font-weight: 600; }
+
+    /* SECTIONS */
+    section { padding: 6rem 1.5rem; }
+    .section-eyebrow { color: var(--gold); font-size: 0.9rem; font-weight: 800; text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 1px; }
+    .section-title { font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; margin-bottom: 1rem; color: var(--cream); }
+    .section-desc { color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; max-width: 600px; }
+    .container { max-width: 1200px; margin: 0 auto; }
+
+    /* SERVICES */
+    #خدماتنا { background: var(--dark-mid); position: relative; }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem; }
+    .service-card {
+      background: rgba(31, 16, 58, 0.6); backdrop-filter: blur(10px); border: 1px solid rgba(212,175,55,0.15);
+      border-radius: 24px; padding: 2.5rem 1.5rem; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .service-card:hover { transform: translateY(-10px); border-color: var(--gold); box-shadow: 0 15px 40px rgba(212,175,55,0.15); }
+    .service-icon { font-size: 3rem; margin-bottom: 1.2rem; display: inline-block; filter: drop-shadow(0 0 10px rgba(255,255,255,0.2)); }
+    .service-card h3 { font-size: 1.4rem; font-weight: 800; color: var(--gold-light); margin-bottom: 1rem; }
+    .service-card p { font-size: 1rem; color: var(--text-muted); line-height: 1.7; }
+    .service-tag { display: inline-block; margin-top: 1.5rem; font-size: 0.8rem; font-weight: 700; color: var(--dark); background: var(--gold); padding: 0.3rem 1rem; border-radius: 50px; }
+
+    /* GALLERY */
+    #معرض-أعمالنا { background: var(--dark); }
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+    .gallery-item { border-radius: 20px; overflow: hidden; background: var(--dark-card); border: 1px solid rgba(255,255,255,0.08); transition: all 0.3s; position: relative; }
+    .gallery-item:hover { transform: scale(1.03); border-color: var(--gold); box-shadow: 0 10px 40px var(--gold-glow); z-index: 2; }
+    .gallery-placeholder { width: 100%; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; font-size: 3.5rem; position: relative; }
+    .gallery-label { position: absolute; bottom: 1rem; right: 1rem; z-index: 1; font-weight: 700; color: var(--dark); background: rgba(243, 229, 171, 0.9); padding: 0.4rem 1rem; border-radius: 50px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+
+    /* BOOKING FORM */
+    #احجز-معاينة { background: var(--dark-mid); }
+    .booking-wrapper { max-width: 650px; margin: 0 auto; background: var(--dark-card); padding: 3rem 2rem; border-radius: 30px; border: 1px solid rgba(212,175,55,0.2); box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+    .form-group label { display: block; font-size: 0.95rem; font-weight: 700; color: var(--gold-light); margin-bottom: 0.5rem; }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); border-radius: 15px; padding: 1rem;
+      color: var(--cream); font-family: 'Cairo', sans-serif; font-size: 1rem; transition: all 0.3s; margin-bottom: 1.5rem;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 15px var(--gold-glow); background: rgba(0,0,0,0.4); }
+    .form-group select option { background: var(--dark-card); color: var(--cream); }
+    .form-submit { width: 100%; background: linear-gradient(135deg, var(--gold), #B8960C); color: var(--dark); border: none; padding: 1.2rem; border-radius: 15px; font-weight: 800; font-size: 1.2rem; cursor: pointer; transition: all 0.3s; box-shadow: 0 5px 20px var(--gold-glow); }
+    .form-submit:hover { transform: translateY(-3px); box-shadow: 0 8px 30px var(--gold); }
+
+    /* CONTACT BAR */
+    .contact-bar { background: var(--dark); padding: 4rem 1.5rem; text-align: center; border-top: 1px solid rgba(212,175,55,0.15); }
+    .contact-links { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-top: 2rem; }
+    .contact-link { display: inline-flex; align-items: center; gap: 0.8rem; padding: 1rem 2rem; border-radius: 50px; font-weight: 800; font-size: 1.1rem; text-decoration: none; transition: all 0.3s; }
+    .contact-link:hover { transform: translateY(-5px); }
+    .link-whatsapp { background: #25D366; color: #fff; box-shadow: 0 5px 20px rgba(37,211,102,0.3); }
+    .link-phone { background: var(--dark-card); color: var(--cream); border: 1px solid rgba(255,255,255,0.2); }
+    .link-facebook { background: var(--fb-blue); color: #fff; box-shadow: 0 5px 20px rgba(24,119,242,0.3); }
+
+    /* FOOTER */
+    footer { background: #05020A; text-align: center; padding: 2rem; border-top: 1px solid rgba(255,255,255,0.05); color: var(--text-muted); font-size: 0.9rem; }
+    footer span { color: var(--gold); font-weight: 700; }
+
+    /* FLOATING WHATSAPP */
+    .float-wa {
+      position: fixed; bottom: 2rem; left: 2rem; z-index: 99; background: #25D366; color: #fff; width: 65px; height: 65px;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; text-decoration: none;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.5); animation: pulse-wa 2s infinite;
+    }
+    @keyframes pulse-wa { 0%, 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0.7); } 50% { box-shadow: 0 0 0 20px rgba(37,211,102,0); } }
+
+    /* SCROLL REVEAL */
+    .reveal { opacity: 0; transform: translateY(40px) scale(0.95); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+    .reveal.visible { opacity: 1; transform: translateY(0) scale(1); }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.8rem; }
+      .contact-links { flex-direction: column; width: 100%; max-width: 300px; margin: 2rem auto 0; }
+      .contact-link { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#" class="nav-logo">🪟 الوكيل للستائر <span>القاهرة</span></a>
+    <a href="#احجز-معاينة" class="nav-cta">احجز معاينة</a>
+  </nav>
+
+  <a href="https://wa.me/201226174018" target="_blank" rel="noopener" class="float-wa" aria-label="واتساب">💬</a>
+
+  <section class="hero" id="الرئيسية">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-content">
+      <div class="hero-badge">✦ متواجدون في كافة أنحاء القاهرة ✦</div>
+      <h1>الوكيل للستائر <em>الأناقة في كل نافذة</em></h1>
+      <p class="hero-sub">متخصصون في بيع وتفصيل وتركيب الستائر بأعلى جودة وأفضل الأسعار. نصل إليك أينما كنت في القاهرة لتقديم خدمات استثنائية.</p>
+      <div class="hero-buttons">
+        <a href="#احجز-معاينة" class="btn-primary">📅 احجز معاينة مجانية</a>
+        <a href="https://www.facebook.com/share/1BJJCYe9Fr/" target="_blank" class="btn-secondary">📘 تابعنا على فيسبوك</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">+1000</span><span class="stat-label">عميل راضٍ</span></div>
+        <div class="stat"><span class="stat-num">+15</span><span class="stat-label">عاماً من التميز</span></div>
+        <div class="stat"><span class="stat-num">24h</span><span class="stat-label">استجابة سريعة</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="خدماتنا">
+    <div class="container">
+      <div class="reveal" style="text-align: center; margin-bottom: 2rem;">
+        <div class="section-eyebrow">ما نقدمه لك</div>
+        <h2 class="section-title">خدماتنا المتميزة والمبتكرة</h2>
+        <p class="section-desc" style="margin: 0 auto;">حلول متكاملة تغطي كافة احتياجاتك من الستائر الكلاسيكية والمودرن والذكية.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <span class="service-icon">🛍️</span>
+          <h3>بيع ستائر جاهزة</h3>
+          <p>تشكيلة فاخرة من الستائر الجاهزة تناسب الصالونات، غرف النوم، والمكاتب.</p>
+          <span class="service-tag">توصيل لكافة مناطق القاهرة</span>
+        </div>
+        <div class="service-card reveal">
+          <span class="service-icon">✂️</span>
+          <h3>تفصيل حسب الطلب</h3>
+          <p>تصاميم فريدة بمقاسات دقيقة وأقمشة مستوردة، مع رفع المقاسات مجاناً.</p>
+          <span class="service-tag">ضمان الجودة والتطابق</span>
+        </div>
+        <div class="service-card reveal">
+          <span class="service-icon">📱</span>
+          <h3>أنظمة الستائر الذكية</h3>
+          <p>مواكبة للتكنولوجيا مع ستائر تعمل بالريموت وتطبيقات الموبايل (Smart Home).</p>
+          <span class="service-tag">خدمة حديثة</span>
+        </div>
+        <div class="service-card reveal">
+          <span class="service-icon">✨</span>
+          <h3>تنظيف وتعقيم الستائر</h3>
+          <p>غسيل الستائر بالبخار في مكانها دون الحاجة لفكها وإعادة تركيبها بأحدث الماكينات.</p>
+          <span class="service-tag">نظافة فائقة</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="معرض-أعمالنا">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-eyebrow">أعمالنا السابقة</div>
+        <h2 class="section-title">معرض الستائر</h2>
+        <p class="section-desc">لمحة من إبداعاتنا المنفذة بدقة في منازل عملائنا بالقاهرة.</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item reveal"><div class="gallery-placeholder" style="background:linear-gradient(135deg,#2D1B5E,#1E1038)">🪟</div><span class="gallery-label">ستائر رول (Blackout)</span></div>
+        <div class="gallery-item reveal"><div class="gallery-placeholder" style="background:linear-gradient(135deg,#2a4a2a,#1a2a1a)">🌿</div><span class="gallery-label">ستائر كلاسيك ومخمل</span></div>
+        <div class="gallery-item reveal"><div class="gallery-placeholder" style="background:linear-gradient(135deg,#5a3a1a,#2a1a0a)">🪵</div><span class="gallery-label">ستائر خشبية وبامبو</span></div>
+        <div class="gallery-item reveal"><div class="gallery-placeholder" style="background:linear-gradient(135deg,#1a3a5a,#0a1a2a)">🌬️</div><span class="gallery-label">ستائر شيفون شفافة</span></div>
+      </div>
+      <p style="text-align:center;color:var(--text-muted);font-size:1rem;margin-top:2rem; font-weight: 700;">
+        📸 راسلنا على واتساب لمشاهدة الكتالوج الكامل المحدث بآخر التصميمات.
+      </p>
+    </div>
+  </section>
+
+  <section id="احجز-معاينة">
+    <div class="container">
+      <div class="booking-wrapper reveal">
+        <div style="text-align: center; margin-bottom: 2rem;">
+          <div class="section-eyebrow">خطوتك الأولى للأناقة</div>
+          <h2 class="section-title" style="font-size: 2.2rem;">احجز معاينة مجانية الآن</h2>
+        </div>
+        <form id="bookingForm">
+          <div class="form-group">
+            <label for="name">الاسم الكريم *</label>
+            <input type="text" id="name" placeholder="اكتب اسمك هنا" required />
+          </div>
+          <div class="form-group">
+            <label for="service">الخدمة المطلوبة *</label>
+            <select id="service" required>
+              <option value="" disabled selected>اختر نوع الخدمة</option>
+              <option value="شراء ستائر جاهزة">شراء ستائر جاهزة</option>
+              <option value="تفصيل ستائر">تفصيل ستائر حسب الطلب</option>
+              <option value="أنظمة ذكية">تركيب ستائر ذكية (موتور)</option>
+              <option value="غسيل وتنظيف">غسيل وتعقيم الستائر</option>
+              <option value="استشارة">طلب مندوب لرفع المقاسات</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="address">المنطقة السكنية (القاهرة)</label>
+            <input type="text" id="address" placeholder="مثال: مدينة نصر، التجمع الخامس..." />
+          </div>
+          <button type="submit" class="form-submit">تأكيد الحجز عبر واتساب 💬</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <div class="contact-bar">
+    <h3 style="font-size: 2rem; color: var(--gold); margin-bottom: 0.5rem;">نسعد بخدمتكم وتواصلكم</h3>
+    <p style="font-size: 1.1rem;">الإدارة: علي الوكيل - متاحون طوال أيام الأسبوع</p>
+    <div class="contact-links reveal">
+      <a href="tel:+201003402861" class="contact-link link-phone">📞 اتصال: 01003402861</a>
+      <a href="https://wa.me/201226174018" target="_blank" class="contact-link link-whatsapp">💬 واتساب: 01226174018</a>
+      <a href="https://www.facebook.com/share/1BJJCYe9Fr/" target="_blank" class="contact-link link-facebook">📘 صفحتنا على فيسبوك</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 <span>الوكيل للستائر</span> — القاهرة، مصر | جميع الحقوق محفوظة لإدارة علي الوكيل</p>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    if ('serviceWorker' in navigator) navigator.serviceWorker.register('service-worker.js');
+
+    document.getElementById('bookingForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const service = document.getElementById('service').value;
+      const address = document.getElementById('address').value.trim();
+      if (!name || !service) return alert('برجاء تعبئة الاسم ونوع الخدمة');
+      const msg = `مرحباً، أنا ${name}%0Aأرغب في الاستفسار عن: ${service}${address ? '%0Aالمنطقة: ' + address : ''}%0Aشكراً.`;
+      // فتح الواتساب باستخدام الرقم الجديد المخصص للواتساب
+      window.open(`https://wa.me/201226174018?text=${msg}`, '_blank');
+    });
+  </script>
+</body>
+</html>
